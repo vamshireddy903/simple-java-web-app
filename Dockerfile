@@ -20,7 +20,7 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Create final lightweight image
 
-FROM openjdk:17-jre-slim
+FROM openjdk:17-slim
 
 WORKDIR /app
 
