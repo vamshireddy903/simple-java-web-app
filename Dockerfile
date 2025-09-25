@@ -25,7 +25,7 @@ FROM openjdk:17-jre-slim
 WORKDIR /app
 
 ## Copy the built JAR from the first stage
-COPY --from=build /target/app/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Expose port
 EXPOSE 8082
