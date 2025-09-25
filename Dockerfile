@@ -1,7 +1,7 @@
 # Multi-stage-build
 
 # Stage1: Build the JAR using Maven
-FROM maven:3.9.3-eclipse-tumerin-21 AS build
+FROM maven:3.8.4-openjdk-17 AS build
 
 # Set working directory
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Create final lightweight image
 
-FROM openjdk:jdk-21-slim
+FROM openjdk:17-jre-slim
 
 WORKDIR /app
 
